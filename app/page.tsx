@@ -1,7 +1,15 @@
-import Image from "next/image";
+import Skills from "@/components/navbar/sections/Skills";
+import Contacts from "@/components/navbar/sections/Contacts";
+import Hero from "@/components/navbar/sections/Hero";
+import Projects from "@/components/navbar/sections/Projects";
 
 export default function Home() {
   return (
-    <h1>bleh</h1>
+    <>
+      <Hero/>
+      <Projects/>
+      <Skills/>
+      <Contacts/>
+    </>
   );
 }
