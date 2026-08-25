@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <section>
+    <section id="home" className="min-h-screen scroll-mt-20">
       <p>Hero</p>
     </section>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contacts = () => {
   return (
-    <section>
+    <section id="contact" className="min-h-screen scroll-mt-20">
       <p>Contacts</p>
     </section>
   )
