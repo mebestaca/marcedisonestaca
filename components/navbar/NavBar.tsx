@@ -76,7 +76,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full bg-white/80 shadow-sm backdrop-blur-md">
+    <nav className="fixed top-0 left-0 z-50 w-full">
       <ul className="flex justify-center gap-8 py-4">
         {links.map(({ href, label }) => {
           const id = href.replace('#', '');
@@ -87,12 +87,13 @@ export default function Navbar() {
               <a
                 href={href}
                 onClick={() => setActiveSection(id)}
-                className={`font-medium transition-colors ${
-                  isActive
-                    ? 'font-semibold text-black'
-                    : 'text-gray-400 hover:text-gray-600'
+                className={`relative border border-[#24282c] bg-transparent text-[#a9adb2] h-[55px] flex items-center gap-[10px] px-[10px] text-left transition duration-200 hover:bg-[#1b1e21] hover:text-white hover:border-[#44484c] ${
+                  isActive ? "bg-[#1b1e21] text-white border-[#44484c]" : ""
                 }`}
               >
+              {isActive && (
+                  <span className="absolute left-[-1px] top-0 bottom-0 w-[2px] bg-[#e9ef22]" />
+                )}
                 {label}
               </a>
             </li>
