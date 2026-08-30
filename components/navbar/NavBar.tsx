@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { links } from '@/lib/links';
+import NavCard from './tabs/card/NavCard';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState<string>('home');
@@ -75,6 +76,7 @@ export default function Navbar() {
     };
   }, []);
 
+
   return (
     <nav className="fixed top-0 left-0 z-50 w-full">
       <ul className="flex justify-center gap-8 py-4">
@@ -83,20 +85,7 @@ export default function Navbar() {
           const isActive = activeSection === id;
 
           return (
-            <li key={href}>
-              <a
-                href={href}
-                onClick={() => setActiveSection(id)}
-                className={`relative border border-[#24282c] bg-transparent text-[#a9adb2] h-[55px] flex items-center gap-[10px] px-[10px] text-left transition duration-200 hover:bg-[#1b1e21] hover:text-white hover:border-[#44484c] ${
-                  isActive ? "bg-[#1b1e21] text-white border-[#44484c]" : ""
-                }`}
-              >
-              {isActive && (
-                  <span className="absolute left-[-1px] top-0 bottom-0 w-[2px] bg-[#e9ef22]" />
-                )}
-                {label}
-              </a>
-            </li>
+            <NavCard key={id} label={label}/>
           );
         })}
       </ul>
