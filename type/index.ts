@@ -1,3 +1,6 @@
 export type NavCardProp = {
-    label:string
+    label: string,
+    id: string,
+    onClickHandler: void,
+    isActive: boolean
 }
