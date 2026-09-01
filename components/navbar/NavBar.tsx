@@ -85,7 +85,34 @@ export default function Navbar() {
           const isActive = activeSection === id;
 
           return (
-            <NavCard key={id} label={label}/>
+            <li key={href}>
+              <a
+                href={href}
+                onClick={() => setActiveSection(id)}
+                className={`
+                  relative border 
+                  border-[#24282c] 
+                  bg-transparent 
+                  text-[#a9adb2] 
+                  h-13.75 
+                  flex 
+                  items-center 
+                  gap-2.5 px-2.5 
+                  text-left 
+                  transition 
+                  duration-200 
+                  hover:bg-[#1b1e21] 
+                  hover:text-white 
+                  hover:border-[#44484c] 
+                  ${isActive ? "bg-[#1b1e21] text-white border-[#44484c]" : ""}
+                `}
+              >
+                {isActive && (
+                  <span className="absolute -left-px top-0 bottom-0 w-0.5 bg-[#e9ef22]" />
+                )}
+                {label}
+              </a>
+            </li>
           );
         })}
       </ul>
