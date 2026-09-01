@@ -3,7 +3,7 @@ import React from 'react'
 
 
 
-const NavCard = ({label} : NavCardProp) => {
+const NavCard = ({label, id, isActive, onClickHandler} : NavCardProp) => {
   return (
     <div>
       <p>{label}</p>
